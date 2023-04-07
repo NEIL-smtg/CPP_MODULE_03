@@ -1,7 +1,7 @@
-NAME		=	fragtrap
+NAME		=	DiamondTrap
 SRCS_DIR	=	srcs/
 OBJS_DIR	=	objs/
-FILES		=	main ClapTrap FragTrap
+FILES		=	main ClapTrap ScavTrap FragTrap DiamondTrap
 SRCS		=	$(addprefix $(SRCS_DIR), $(addsuffix .cpp, $(FILES)))
 OBJS		=	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 GCPP		=	c++

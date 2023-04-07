@@ -6,31 +6,28 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 03:58:11 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 04:05:33 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/08 05:04:53 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	FragTrap	neil("neil");
-	FragTrap	zixian("zixian");
+	DiamondTrap a("Bob");
 
-	neil.attack("zixian");
-
-	zixian.takeDamage(30);
-
-	zixian.beRepaired(10);
-
-	zixian.attack("neil");
-	
-	neil.takeDamage(30);
-
-	neil.beRepaired(5);
-
-	for (int i = 0; i < 100; i++)
-		zixian.attack("fakePerson");
-	zixian.beRepaired(10);
+	std::cout << "name: " << a.getName() << std::endl;
+    std::cout << "Hp: " << a.getHP() << std::endl;
+    std::cout << "Ep: " << a.getEP() << std::endl;
+    std::cout << "Ad: " << a.getAD() << std::endl;
+    a.attack("Fake Bob");
+    DiamondTrap b(a);
+    b.attack("Fake Bob 2");
+    DiamondTrap c;
+    c = b;
+	c.attack("Bob?");
+	for (int i = 0; i < 50; i++)
+		c.attack("noob");
+	c.whoAmI();
 	return (0);
 }
