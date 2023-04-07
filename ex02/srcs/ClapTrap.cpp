@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 03:38:27 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/07 22:33:00 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/07 23:33:19 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << this->name << " exiting...\n";
+	std::cout << this->name << "(ClapTrap) exiting...\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
