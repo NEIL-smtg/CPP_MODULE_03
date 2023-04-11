@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:23:45 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 05:37:30 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 17:58:58 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class	ScavTrap: public ClapTrap
+class	ScavTrap: virtual public ClapTrap
 {
 	public:
 		ScavTrap(void);
@@ -34,6 +34,7 @@ class	ScavTrap: public ClapTrap
 		unsigned int	hitPoint;
 		unsigned int	energyPoint;
 		unsigned int	attackDamage;
+		bool			isGuarding;
 };
 
 #endif

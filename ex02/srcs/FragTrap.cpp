@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 23:33:26 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 05:36:10 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 17:29:30 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	FragTrap::attack(const std::string& target)
 	if (this->hitPoint == 0)
 		std::cout << this->name << "(FragTrap) died long time ago\n";
 	if (this->energyPoint == 0)
-		std::cout << this->name << "(FragTrap) has no energy point\n";
+		std::cout << this->name << "(FragTrap) has 0 energy point\n";
 	if (this->energyPoint == 0 || this->hitPoint == 0)
 		return ;
 	this->energyPoint--;
@@ -91,7 +91,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 	if (this->hitPoint == 0)
 		std::cout << this->name << "(FragTrap) died long time ago\n";
 	if (this->energyPoint == 0)
-		std::cout << this->name << "(FragTrap) has no energy point\n";
+		std::cout << this->name << "(FragTrap) has 0 energy point\n";
 	if (this->energyPoint == 0 || this->hitPoint == 0)
 		return ;
 	this->energyPoint--;

@@ -6,6 +6,7 @@ SRCS		=	$(addprefix $(SRCS_DIR), $(addsuffix .cpp, $(FILES)))
 OBJS		=	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 GCPP		=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
+SHADOW		=	-Wshadow -Wno-shadow
 RM			=	rm -rf
 
 all:

@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 03:58:11 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/07 23:22:41 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 17:36:25 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	main(void)
 {
 	ScavTrap	neil("neil");
 	ScavTrap	zixian("zixian");
+
+	zixian.guardGate();
 
 	neil.attack("zixian");
 

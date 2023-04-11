@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:29:42 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 05:34:42 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 18:00:19 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ ScavTrap::ScavTrap(void)
 	this->energyPoint = 50;
 	this->attackDamage = 20;
 	this->name = "NULL";
+	isGuarding = false;
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -28,6 +29,7 @@ ScavTrap::ScavTrap(std::string name)
 	this->energyPoint = 50;
 	this->attackDamage = 20;
 	this->name = name;
+	isGuarding = false;
 }
 
 ScavTrap::~ScavTrap(void)
@@ -52,7 +54,13 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScapTrap " << this->getName() << " is in Gate Keeper mode\n";
+	if (!isGuarding)
+	{
+		std::cout << "ScapTrap " << this->getName() << " is in Gate Keeper mode\n";
+		isGuarding = true;
+	}
+	else
+		std::cout << "ScapTrap " << this->getName() << " is already guarding the GATE !!\n";
 }
 
 void	ScavTrap::attack(const std::string& target)

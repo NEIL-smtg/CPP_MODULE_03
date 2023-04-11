@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 03:38:27 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/07 22:33:00 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 17:26:38 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->energyPoint = 10;
 	this->attackDamage = 0;
 	this->name = name;
+	std::cout << "ClapTrap (NAME) created\n";
 }
 
 ClapTrap::~ClapTrap(void)
@@ -36,10 +37,7 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	this->name = other.name;
-	this->hitPoint = other.hitPoint;
-	this->energyPoint = other.energyPoint;
-	this->attackDamage = other.attackDamage;
+	*this = other;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
@@ -56,7 +54,7 @@ void	ClapTrap::attack(const std::string& target)
 	if (this->hitPoint == 0)
 		std::cout << this->name << " died long time ago\n";
 	if (this->energyPoint == 0)
-		std::cout << this->name << " has no energy point\n";
+		std::cout << this->name << " has 0 energy point\n";
 	if (this->energyPoint == 0 || this->hitPoint == 0)
 		return ;
 	this->energyPoint--;
@@ -68,7 +66,10 @@ void	ClapTrap::attack(const std::string& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hitPoint == 0)
+	{
 		std::cout << this->name << " died long time ago\n";
+		return ;
+	}
 	std::cout << this->name << " took " << amount << " of damage !\n";
 	if (this->hitPoint <= amount)
 	{
@@ -85,7 +86,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->hitPoint == 0)
 		std::cout << this->name << " died long time ago\n";
 	if (this->energyPoint == 0)
-		std::cout << this->name << " has no energy point\n";
+		std::cout << this->name << " has 0 energy point\n";
 	if (this->energyPoint == 0 || this->hitPoint == 0)
 		return ;
 	this->energyPoint--;

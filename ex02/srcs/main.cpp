@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 03:58:11 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 04:05:33 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 17:36:09 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void)
 	FragTrap	zixian("zixian");
 
 	neil.attack("zixian");
+	neil.highFivesGuys();
 
 	zixian.takeDamage(30);
 
@@ -32,5 +33,9 @@ int	main(void)
 	for (int i = 0; i < 100; i++)
 		zixian.attack("fakePerson");
 	zixian.beRepaired(10);
+
+	neil = FragTrap("BOB");
+	neil.highFivesGuys();
+	neil.attack("FakePerson2");
 	return (0);
 }

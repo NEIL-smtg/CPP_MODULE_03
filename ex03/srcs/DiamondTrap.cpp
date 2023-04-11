@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 04:21:47 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 05:14:46 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 18:22:17 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 DiamondTrap::DiamondTrap()
 {
-	// ClapTrap("NULL_clap_trap");
-	this->name = "NULL";
 	std::cout << "DiamondTrap NULL created\n";
+
+	ClapTrap::name = "NULL_clap_name";
+	this->name = "NULL";
+	this->hitPoint = FragTrap::hitPoint;
+	this->energyPoint = ScavTrap::energyPoint;
+	this->attackDamage = FragTrap::attackDamage;
 }
 
 DiamondTrap::DiamondTrap(std::string name)
 {
-	// ClapTrap(name + "_clap_trap");
-	this->name = name;
 	std::cout << "DiamondTrap " << this->name << " created\n";
+
+	ClapTrap::name = name + "_clap_name";
+	this->name = name;
+	this->hitPoint = FragTrap::hitPoint;
+	this->energyPoint = ScavTrap::energyPoint;
+	this->attackDamage = FragTrap::attackDamage;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -47,8 +55,13 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "My name is " << this->name << " and my parents are ";
-	std::cout << ScavTrap::name << "(ScavTrap) and " << FragTrap::name << "(FragTrap)\n";
+	std::cout << "My name is " << this->name << " and i'm originated from ";
+	std::cout << ClapTrap::getName() << std::endl;
+}
+
+void	DiamondTrap::attack(const std::string& target)
+{
+	ScavTrap::attack(target);
 }
 
 unsigned int	DiamondTrap::getHP()
